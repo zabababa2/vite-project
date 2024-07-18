@@ -1,0 +1,109 @@
+/* App（共通）*/
+body {
+    background-color: #d3d3d3;
+}
+
+/* ヘッダー */
+header {
+    background-color: #008000;
+    text-align: center;
+    padding: 1px 0px;
+    margin-bottom: 30px;
+    color: #ffffff;
+
+}
+
+header h1 {
+    font-size: 40px;
+    letter-spacing: 2.0mm;
+}
+
+.setThreadLink {
+    position: fixed;
+    top: 60px;
+    right: 120px;
+    text-decoration: underline;
+}
+
+.Link {
+    color: #ffffff;
+}
+
+/* 新着スレッド一覧 */
+main {
+    display: flex;
+    justify-content: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;  /*二重線から変更*/
+    background-color: #ffffff;
+    width: 500px;
+    padding: 10px;
+}
+
+/* スレッドの新規作成 */
+.setThread h2 {
+    margin-bottom: 80px;
+} 
+
+.textBox {
+    width: 500px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.btn{
+    text-align: right;
+    position: relative;
+}
+
+button {
+    background-color: #008000;
+    border: #008000;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 40px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.backTop {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+}
+
+/* 新着投稿一覧 */
+.Container {
+    width: 1100px;
+    margin: auto;
+}
+
+.postContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0px;
+}
+
+ul {
+    padding-left: 0px;
+    margin: 0px;
+}
+
+li {
+    list-style-type: none;
+    background-color: #ffffff;
+    width: 500px;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+}
+
+/* 投稿の新規作成 */
+textarea {
+    width: 400px;
+    height: 200px;
+    font-size: 20px;
+}
