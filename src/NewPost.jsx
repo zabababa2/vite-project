@@ -1,10 +1,11 @@
 import { useState } from "react"
 
-export const NewPost = ({ threadId }) => {
+
+export const NewPost = ({ threadId , fetchPosts }) => {
   const [ newPost, setNewPost ] = useState('');
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const response = await fetch(`https://railway.bulletinboard.techtrain.dev/threads/${threadId}/posts`,{
       method: 'POST',
       headers: {
@@ -13,12 +14,14 @@ export const NewPost = ({ threadId }) => {
         post: newPost
       })
     });
-    window.location.reload();
+    setNewPost('');
+    fetchPosts();
+    // window.location.reload();
   } 
 
   return (
     <div>
-      <form onSubmit={ handleSubmit }>
+      <form>
         <textarea
           value={ newPost }
           onChange={ (e) => setNewPost(e.target.value) }
@@ -26,7 +29,7 @@ export const NewPost = ({ threadId }) => {
           required
         />
         <div className="btn">
-          <button type="submit">投稿</button>
+          <button type="submit" onClick={ handleSubmit }>投稿</button>
         </div>
       </form>
     </div>

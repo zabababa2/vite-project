@@ -11,13 +11,13 @@ export const PostList = () => {
   const threadId = params.thread_id
   const { state: title } = useLocation(); //titleの取得
 
+  const fetchPosts = async () => {
+    const response = await fetch(`https://railway.bulletinboard.techtrain.dev/threads/${threadId}/posts`);
+    const data = await response.json();
+    setthreadPosts(data.posts);
+  }
+
   useEffect(() => {
-    const fetchPosts = async () => {
-    	const response = await fetch(`https://railway.bulletinboard.techtrain.dev/threads/${threadId}/posts`);
-      const data = await response.json();
-      setthreadPosts(data.posts);
-      console.log(threadPosts);
-  	}
     fetchPosts(); 
   }, [])
     
@@ -34,7 +34,7 @@ export const PostList = () => {
               </li>
 						))}
 					</ul>
-					<NewPost threadId={ threadId } />
+					<NewPost threadId={ threadId } fetchPosts={ fetchPosts }/>
 				</div>
 				<Link to="/">Topに戻る</Link>
 			</div>
