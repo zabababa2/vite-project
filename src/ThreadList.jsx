@@ -20,7 +20,7 @@ export const ThreadList = () => {
 				<table>
           <tbody>
 					  {threads.map((thread) => (
-              <tr key={ thread.title }>
+              <tr key={ thread.id }>
                 <td>
                   <Link to={`/threads/${ thread.id }`} state={ thread.title }>
                     { thread.title }

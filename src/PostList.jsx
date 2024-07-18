@@ -29,7 +29,7 @@ export const PostList = () => {
 				<div className='postContainer'>
 					<ul>
             {threadPosts.map((threadPost) => (
-							<li key={ threadPost.post }>
+							<li key={ threadPost.id }>
                 { threadPost.post }
               </li>
 						))}
